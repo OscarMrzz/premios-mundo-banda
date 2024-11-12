@@ -1,1 +1,539 @@
-/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+
+   
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    font-family:inherit ;
+    font-size: inherit;
+    color: inherit;
+}
+p a{
+    display: inline ;
+}
+
+img, video, iframe, picture, figure{
+    max-width: 100%;
+    display: block;
+
+}
+
+form,input, select, textarea, button, labe{
+    display: block;
+    font-family:inherit ;
+    font-size: inherit;
+    color: inherit;
+}
+
+
+/* Variables*/
+:root{
+    --color-principal: #ffffff;
+    --color-secondary: #1f7a8c;
+    --color-tercero: #e8e8e8;
+    --color-cuarto: #022b3a;
+    --color-quinto: #001219;
+}
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+   
+    background-color: #e8e8e8;
+}
+
+.contenedor-pricipal{
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer"
+    ;
+    grid-template-rows: 50px auto 100px;
+}
+
+.contenedor-pricipal__header{
+    grid-area: header;
+  
+}
+
+.contenedor-pricipal__main{
+    grid-area: main;
+}
+
+.contenedor-pricipal__footer{
+    grid-area: footer;
+   
+  
+}
+
+/*Barra de navegacion */
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-cuarto);
+}
+
+.contenedor-footer{
+    background-color: var(--color-cuarto);
+    width: 100%;
+    height: 100px;
+
+   
+    
+    color: var(--color-principal);
+}
+
+.menu__opciones{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+   
+}
+.menu__opcion{
+    color: var(--color-principal);
+    margin: 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.menu__opcion:hover{
+    background-color: #1f7a8c ;
+}
+
+.container{
+  
+    background-color: var(--color-tercero);
+}
+
+/*AREA USUARIOS*/
+.container__registros{
+    margin-top: 50px;
+    padding-top: 20px;
+   display: grid;
+   grid-template-areas: 
+   "area-formulario area-tabla"
+   ;
+   gap: 10px;
+   grid-template-columns: 1fr 2fr;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-tercero);
+   
+}
+
+.area-formulario{
+    grid-area: area-formulario;
+
+
+}
+
+.area-tabla{
+    grid-area: area-tabla;
+ 
+}
+
+
+
+/*AREA Nominados*/
+.container__registros-nominados{
+    margin-top: 50px;
+    padding-top: 20px;
+   display: grid;
+   grid-template-areas: 
+   "area-formulario area-tabla"
+   ;
+   gap: 10px;
+   grid-template-columns: 1fr 2fr;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-tercero);
+   
+}
+
+.area-formulario{
+    grid-area: area-formulario;
+
+
+
+}
+.area_card_nominado{
+    grid-area: area-card-nominado;
+
+  
+    
+}
+
+.card-nominado__imge{
+    width: 90%;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 3px solid var(--color-secondary);
+}
+
+.Card-nominado{
+    width: 90%;
+    height: 70%;
+    background-color: var(--color-principal);
+    border: 3px solid var(--color-secondary);
+}
+
+.area-tabla{
+    grid-area: area-tabla;
+ 
+}
+/* HOME */
+
+.portada{
+    background-image: url(/assets/img/portada1.jpg);
+    display: flex;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    justify-content: center ;
+    align-items: center;
+   
+}
+
+
+.portada__title{
+  
+   font-size: 50px;
+  
+    color: var(--color-principal);
+    
+   
+}
+
+
+
+.seccion__bienvenida{
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+    height: 700px;
+   
+    justify-content: center;
+  
+}
+
+.seccion__lugar{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-cuarto);
+    width: 100%;
+    height: 700px;
+   
+    justify-content: center;
+  
+}
+
+.seccion__galardon{
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+    height: 700px;
+   
+    justify-content: center;
+  
+}
+
+.bienvenido__title{
+    margin-left: 35px;
+    font-size: 50px;
+    color: var(--color-quintoz)
+}
+.lugar__title{
+    margin-left: 35px;
+    font-size: 50px;
+    color: var(--color-principal);
+    
+   
+}
+
+.bienvenida__detalle{
+    margin-left: 35px;
+    width: 30%;
+    font-size: 20px;
+}
+.lugar__detalle{
+    margin-left: 35px;
+    font-size: 20px;
+    color: var(--color-principal);
+    width: 30%;
+}
+
+.galardon__title{
+    margin-left: 35px;
+    font-size: 50px;
+    color: var(--color-quintoz)
+}
+
+.galardon__detalle{
+    margin-left: 35px;
+    width: 30%;
+    font-size: 20px;
+}
+
+/*tablas*/
+
+.table-container{
+    justify-content: space-between;
+    width: 90%;
+    height: 70%;
+  
+    background-color: var(--color-principal);
+    border: 3px solid var(--color-secondary);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); 
+    overflow-y: auto;
+ 
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Une las líneas de las celdas */
+  }
+  
+  th, td {
+    border: 1px solid var(--color-tercero); /* Establece las líneas alrededor de las celdas */
+    padding: 8px;
+    text-align: left;
+  }
+
+  .table__row-th{
+    width: 30px;
+    max-width: 30px;
+    overflow: hidden;
+  }
+  .table__row-th-button{
+    width: 5px;
+    max-width: 5px;
+ 
+  }
+
+  .table__row-td{
+    width: 30px;
+    max-width: 30px;
+    overflow: hidden;
+  }
+
+  .table__row-td-button{
+    width: 5px;
+    max-width: 5px;
+    
+
+  }
+
+  .button-table{
+    width: 100%;
+    cursor: pointer;
+  }
+.button-table-editar{
+    background-color: green;
+    color: var(--color-principal);
+    border: none;
+    border-radius: 5px;
+}
+  .button-table-eliminar{
+    background-color: red;
+    color: var(--color-principal);
+    border: none;
+    border-radius: 5px;
+  }
+
+
+  /*FORMULARIO*/
+
+ .container-form__form{
+    background-color: var(--color-principal);
+    width: 70%;
+    height: 70%;
+    
+    margin-left: 10px;
+    border: 3px solid var(--color-secondary);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+
+ }
+
+ .form__container__input{
+    margin-top: 20px;
+    justify-content: center;
+    
+   
+   
+ }
+ 
+ .form__label{
+    margin-left: 20px;
+ }
+ .form__input{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 90%;
+ }
+
+ .container__form-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+
+ }
+ .button{
+     width: 90%;
+     height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: var(--color-principal);
+    background-color: var(--color-secondary);
+    margin-top: 10px;
+    cursor: pointer;
+ }
+
+ /*Votaciones*/
+ 
+ .container-votaciones{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 35px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+
+
+ .categoria-card{
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "info"
+    
+    
+    ;
+    gap: 10px;
+    padding: 20px;
+    width: 300px;
+    height: 250px;
+    margin: 10px;
+    border: 3px solid var(--color-secondary);
+    background-color: var(--color-principal);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  
+ }
+ .title-categoria{
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: title;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-secondary);
+  
+
+ }
+
+ .info-categoria{
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: info;
+    color: var(--color-quinto);
+ }
+
+
+ /*Media query*/
+
+ @media (min-width: 300px){
+
+    body{
+       
+        overflow: auto;
+  
+    }
+    .ntainer__registros{
+        margin-top: 50px;
+        padding-top: 20px;
+       display: grid;
+       grid-template-areas: 
+       "area-formulario"
+       "area-tabla"
+       ;
+       gap: 10px;
+       grid-template-columns: 1fr;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-tercero);
+       
+    }
+
+      .table-container{
+        margin-left: 10px;
+      }
+
+ }
+
+ @media (min-width: 900px){
+    
+ 
+    .container__registros{
+        margin-top: 50px;
+        padding-top: 20px;
+       display: grid;
+       grid-template-areas: 
+       "area-formulario area-tabla"
+   
+       ;
+       gap: 10px;
+       grid-template-columns: 1fr 2fr;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-tercero);
+       
+    }
+    
+
+ }

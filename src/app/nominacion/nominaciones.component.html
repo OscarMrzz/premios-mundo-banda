@@ -1,0 +1,58 @@
+<div class="container__registros">
+    <div class="area-formulario">
+        
+        <form (ngSubmit)="agregar_editar(formulario)" class="container-form__form" #formulario="ngForm">
+            <div class="form__container__input">
+                <label class="form__label" for="">Nominado</label>
+                <select  [(ngModel)]="datosFormulario.id_nominado" class="form__input" name="nominado" id="">
+                    <option value="" disabled selected></option>
+                    <option *ngFor="let nominado of nominados" [value]="nominado.id_nominado">
+                      {{ nominado.nombre_nominado }}
+                    </option>
+                  </select>
+                  <label class="form__label" for="">categoria</label>
+                  <select  [(ngModel)]="datosFormulario.id_categoria" class="form__input" name="categorias" id="">
+                    <option value="" disabled selected></option>
+                    <option *ngFor="let categoria of categorias" [value]="categoria.id_categoria">
+                      {{ categoria.nombre_categoria }}
+                    </option>
+                  </select>
+                
+    
+            </div>
+            <div class="container__form-button">
+              <button type="submit" class="button">Aceptar</button>
+              <button type="reset" class="button">Cancelar</button>
+            </div>
+        </form>
+    
+    </div>
+    
+    <div class="area-tabla">
+        <div class="table-container">  
+            <table class="table">
+                <thead class="table__head">
+                    <tr class="table__row">
+                        <th class="table__row-th">Nominado</th>
+                        <th class="table__row-th">Categoria</th>
+                   
+            
+               
+                        <th class="table__row-th table__row-th-button">Editar</th>
+                        <th class="table__row-th table__row-th-button">Eliminar</th>
+                    </tr>
+                    
+                </thead>
+                <tbody class="table__body"  *ngFor="let nominacion of nominaciones; let indice =index">
+                    <tr class="table__row">
+                        <td class="table__row-td">{{nominacion.nombre_nominado}}</td>
+                        <td class="table__row-td">{{nominacion.nombre_categoria}}</td>
+                        <td class="table__row-td table__row-td-button" ><button class="button-table button-table-editar" (click)="capturarparaeditar(indice)">Editar</button></td>
+                        <td class="table__row-td table__row-td-button"><Button class="button-table button-table-eliminar" (click)="eliminar(nominacion.id_nominacion)">Eliminar</Button></td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+    </div>
+    </div> 

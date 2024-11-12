@@ -1,0 +1,11 @@
+<div class="container-votaciones" >
+<div class="container-categorias-card" *ngFor="let categoria of categorias">
+    <div routerLink="/votaciones-final" class="categoria-card">
+        <h2 class="title-categoria">{{categoria.nombre_categoria}}</h2>
+        <p class="info-categoria">
+            {{categoria.detalles_categoria}}
+        </p>
+        
+    </div>
+</div>
+</div>
