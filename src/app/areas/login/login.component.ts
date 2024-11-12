@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsuariosService } from '../service/usuarios/usuarios.service';
+import { UsuariosService } from '../../service/usuarios/usuarios.service';
 import { UsuariosModel } from 'src/app/models/usuarios';
-import { LoginService } from '../service/login/login.service';
+import { LoginService } from '../../service/login/login.service';
 import { Observable } from 'rxjs';
 
 @Component({

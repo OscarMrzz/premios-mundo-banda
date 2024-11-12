@@ -1,30 +1,28 @@
 import { Component, HostBinding, OnInit, ViewChild, ElementRef } from '@angular/core';
-import {UsuariosService} from "../service/usuarios/usuarios.service"
-import { UsuariosModel } from '../models/usuarios';
-
+import {CategoriasService} from "../../service/categorias/categorias.service"
+import { CategoriasModel } from '../../models/categorias';
 
 @Component({
-  selector: 'app-areausuarios',
-  templateUrl: './areausuarios.component.html',
-  styleUrls: ['./areausuarios.component.css']
+  selector: 'app-categorias',
+  templateUrl: './categorias.component.html',
+  styleUrls: ['./categorias.component.css']
 })
-export class AreausuariosComponent implements OnInit{
+export class CategoriasComponent {
   //capturamos el el elemento de nombre del formulario
   //esto para colocar el foco ahi
   @ViewChild('nombreInput') nombreInput!: ElementRef;
-  datosFormulario: UsuariosModel = {
-    id_usuario: 0,
-    nombre: '',
-    apellido: '',
-    nombre_usuario: '',
-    permisos: ''
+  datosFormulario: CategoriasModel = {
+    id_categoria: 0,
+    nombre_categoria: '',
+    detalles_categoria: '', 
+   
   };
   editando =false
-  datoscapturadoparaedicion: UsuariosModel={}
+  datoscapturadoparaedicion: CategoriasModel={}
 
-  usuarios:any = []
+  categorias:any = []
   constructor(
-    private usuariosservice:UsuariosService
+    private categoriaservice:CategoriasService
   ){
 
   }
@@ -35,17 +33,17 @@ export class AreausuariosComponent implements OnInit{
 
 
   get() {
-    this.usuariosservice.get().subscribe(
+    this.categoriaservice.get().subscribe(
       res => {
-        this.usuarios = res;
+        this.categorias = res;
         console.log("conexion a la base de datos exitosa")
       },
       err => console.log(err)
     );
   }
   capturarparaeditar(indice:number){
-    this.datoscapturadoparaedicion=this.usuarios[indice]
-    this.datosFormulario =this.usuarios[indice]
+    this.datoscapturadoparaedicion=this.categorias[indice]
+    this.datosFormulario =this.categorias[indice]
     this.editando= true
   }
 
@@ -53,11 +51,10 @@ export class AreausuariosComponent implements OnInit{
 
     if(this.editando){
       console.log("Esto vamos a editar: ",this.datosFormulario)
-      let elid =String( this.datoscapturadoparaedicion.id_usuario)
-      this.usuariosservice.update(elid ,this.datosFormulario).subscribe(respuesta =>{
-        this.datosFormulario["id_usuario"]=0
-  
-        console.log("Edicion exitosa")
+      let elid =String( this.datoscapturadoparaedicion.id_categoria)
+      this.categoriaservice.update(elid ,this.datosFormulario).subscribe(respuesta =>{
+        this.datosFormulario["id_categoria"]=0
+        console.log("Edicion exitosa",respuesta)
         this.get()
         this.editando =false
       },error=>{
@@ -67,9 +64,9 @@ export class AreausuariosComponent implements OnInit{
       
 
     }else{
-    let datosCapturadosForm: UsuariosModel= this.datosFormulario
+    let datosCapturadosForm: CategoriasModel= this.datosFormulario
     
-    this.usuariosservice.save(datosCapturadosForm).subscribe(respuesta=>{
+    this.categoriaservice.save(datosCapturadosForm).subscribe(respuesta=>{
       console.log("Usuario agregado exitosamente", respuesta)
       this.get()
     }, error=>{
@@ -87,7 +84,7 @@ export class AreausuariosComponent implements OnInit{
 
   eliminar(id: string){
     console.log("iniciando eliminacion")
-    this.usuariosservice.delete(id).subscribe(respuesta=>{
+    this.categoriaservice.delete(id).subscribe(respuesta=>{
       console.log("usuario eliminado exitosamente",respuesta)
       this.get()
     },error=>{
@@ -96,4 +93,5 @@ export class AreausuariosComponent implements OnInit{
   )
 
   }
-} 
+
+}

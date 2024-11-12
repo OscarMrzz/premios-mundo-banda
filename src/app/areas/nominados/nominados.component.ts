@@ -1,6 +1,6 @@
 import { Component, HostBinding, OnInit, ViewChild, ElementRef } from '@angular/core';
-import {NominadosService} from "../service/nominados/nominados.service"
-import { NominadosModel } from '../models/nominados';
+import {NominadosService} from "../../service/nominados/nominados.service"
+import { NominadosModel } from '../../models/nominados';
 
 @Component({
   selector: 'app-nominados',

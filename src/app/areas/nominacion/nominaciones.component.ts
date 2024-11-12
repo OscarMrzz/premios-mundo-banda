@@ -1,10 +1,10 @@
 import { Component, HostBinding, OnInit, ViewChild, ElementRef } from '@angular/core';
-import {NominacionesService} from "../service/nominacion/nominacion.service"
-import { Nominaciones_tablaModel } from '../models/nomianciones_tabla';
-import { NominacionModel } from '../models/nominacion';
+import {NominacionesService} from "../../service/nominacion/nominacion.service"
+import { Nominaciones_tablaModel } from '../../models/nomianciones_tabla';
+import { NominacionModel } from '../../models/nominacion';
 
-import { NominadosService } from '../service/nominados/nominados.service';
-import { CategoriasService } from '../service/categorias/categorias.service';
+import { NominadosService } from '../../service/nominados/nominados.service';
+import { CategoriasService } from '../../service/categorias/categorias.service';
 
 
  type Elmodelo =Nominaciones_tablaModel

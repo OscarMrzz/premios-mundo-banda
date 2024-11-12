@@ -1,28 +1,30 @@
 import { Component, HostBinding, OnInit, ViewChild, ElementRef } from '@angular/core';
-import {CategoriasService} from "../service/categorias/categorias.service"
-import { CategoriasModel } from '../models/categorias';
+import {UsuariosService} from "../../service/usuarios/usuarios.service"
+import { UsuariosModel } from '../../models/usuarios';
+
 
 @Component({
-  selector: 'app-categorias',
-  templateUrl: './categorias.component.html',
-  styleUrls: ['./categorias.component.css']
+  selector: 'app-areausuarios',
+  templateUrl: './areausuarios.component.html',
+  styleUrls: ['./areausuarios.component.css']
 })
-export class CategoriasComponent {
+export class AreausuariosComponent implements OnInit{
   //capturamos el el elemento de nombre del formulario
   //esto para colocar el foco ahi
   @ViewChild('nombreInput') nombreInput!: ElementRef;
-  datosFormulario: CategoriasModel = {
-    id_categoria: 0,
-    nombre_categoria: '',
-    detalles_categoria: '', 
-   
+  datosFormulario: UsuariosModel = {
+    id_usuario: 0,
+    nombre: '',
+    apellido: '',
+    nombre_usuario: '',
+    permisos: ''
   };
   editando =false
-  datoscapturadoparaedicion: CategoriasModel={}
+  datoscapturadoparaedicion: UsuariosModel={}
 
-  categorias:any = []
+  usuarios:any = []
   constructor(
-    private categoriaservice:CategoriasService
+    private usuariosservice:UsuariosService
   ){
 
   }
@@ -33,17 +35,17 @@ export class CategoriasComponent {
 
 
   get() {
-    this.categoriaservice.get().subscribe(
+    this.usuariosservice.get().subscribe(
       res => {
-        this.categorias = res;
+        this.usuarios = res;
         console.log("conexion a la base de datos exitosa")
       },
       err => console.log(err)
     );
   }
   capturarparaeditar(indice:number){
-    this.datoscapturadoparaedicion=this.categorias[indice]
-    this.datosFormulario =this.categorias[indice]
+    this.datoscapturadoparaedicion=this.usuarios[indice]
+    this.datosFormulario =this.usuarios[indice]
     this.editando= true
   }
 
@@ -51,10 +53,11 @@ export class CategoriasComponent {
 
     if(this.editando){
       console.log("Esto vamos a editar: ",this.datosFormulario)
-      let elid =String( this.datoscapturadoparaedicion.id_categoria)
-      this.categoriaservice.update(elid ,this.datosFormulario).subscribe(respuesta =>{
-        this.datosFormulario["id_categoria"]=0
-        console.log("Edicion exitosa",respuesta)
+      let elid =String( this.datoscapturadoparaedicion.id_usuario)
+      this.usuariosservice.update(elid ,this.datosFormulario).subscribe(respuesta =>{
+        this.datosFormulario["id_usuario"]=0
+  
+        console.log("Edicion exitosa")
         this.get()
         this.editando =false
       },error=>{
@@ -64,9 +67,9 @@ export class CategoriasComponent {
       
 
     }else{
-    let datosCapturadosForm: CategoriasModel= this.datosFormulario
+    let datosCapturadosForm: UsuariosModel= this.datosFormulario
     
-    this.categoriaservice.save(datosCapturadosForm).subscribe(respuesta=>{
+    this.usuariosservice.save(datosCapturadosForm).subscribe(respuesta=>{
       console.log("Usuario agregado exitosamente", respuesta)
       this.get()
     }, error=>{
@@ -84,7 +87,7 @@ export class CategoriasComponent {
 
   eliminar(id: string){
     console.log("iniciando eliminacion")
-    this.categoriaservice.delete(id).subscribe(respuesta=>{
+    this.usuariosservice.delete(id).subscribe(respuesta=>{
       console.log("usuario eliminado exitosamente",respuesta)
       this.get()
     },error=>{
@@ -93,5 +96,4 @@ export class CategoriasComponent {
   )
 
   }
-
-}
+} 
