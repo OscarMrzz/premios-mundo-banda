@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {CategoriasService} from "../service/categorias/categorias.service"
+import {CategoriasService} from "../../service/categorias/categorias.service"
 @Component({
   selector: 'app-votaciones',
   templateUrl: './votaciones.component.html',

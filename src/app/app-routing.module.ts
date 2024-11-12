@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './areas/home/home.component';
-import { AreausuariosComponent } from './areas/areausuarios/areausuarios.component';
-import { CategoriasComponent } from './areas/categorias/categorias.component';
-import { NominacionesComponent } from './areas/nominacion/nominaciones.component';
-import { VotacionesComponent } from './votaciones/votaciones.component';
-import { VotacionesFinalComponent } from './votaciones-final/votaciones-final.component';
-import { LoginComponent } from './areas/login/login.component';
+import { HomeComponent } from './page/home/home.component';
+import { AreausuariosComponent } from './page/areausuarios/areausuarios.component';
+import { CategoriasComponent } from './page/categorias/categorias.component';
+import { NominacionesComponent } from './page/nominacion/nominaciones.component';
+import { VotacionesComponent } from './page/votaciones/votaciones.component';
+import { VotacionesFinalComponent } from './page/votaciones-final/votaciones-final.component';
+import { LoginComponent } from './page/login/login.component';
 import { asistente_adminGuard, jurado_adminGuard } from './guards/permisos.guard';
-import { NominadosComponent } from './areas/nominados/nominados.component';
+import { NominadosComponent } from './page/nominados/nominados.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
