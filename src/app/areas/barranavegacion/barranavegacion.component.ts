@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../service/login/login.service';
+import { LoginService } from '../../service/login/login.service';
 import { map, Observable } from 'rxjs';
-import { UsuariosModel } from '../models/usuarios';
+import { UsuariosModel } from '../../models/usuarios';
 
 @Component({
   selector: 'app-barranavegacion',
