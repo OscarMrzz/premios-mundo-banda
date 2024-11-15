@@ -1,1 +1,10 @@
-<p>votaciones-final works!</p>
+
+<div class="container-votaciones" >
+    <div  class="container-categorias-card" *ngFor="let nominado of nominadosFiltrados; let  indice = index">
+        <div  class="categoria-card">
+            <h2 class="title-categoria">{{nominado.nombre_nominado}}</h2>
+           <button class="button-votar" (click)="votar(indice)">Votar</button>
+            
+        </div>
+    </div>
+    </div> 

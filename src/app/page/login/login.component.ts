@@ -5,6 +5,7 @@ import { UsuariosService } from '../../service/usuarios/usuarios.service';
 import { UsuariosModel } from 'src/app/models/usuarios';
 import { LoginService } from '../../service/login/login.service';
 import { Observable } from 'rxjs';
+import { RecopiladorService } from 'src/app/service/recopilador/recopilador.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private usuarioservice: UsuariosService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private recopiladorservice: RecopiladorService
   ) {}
 
   ngOnInit(): void {
@@ -33,12 +35,14 @@ export class LoginComponent implements OnInit {
       this.estado = value;
      
     });
+
   }
 
   aceptar() {
     const el_nombre_usuario = this.loginForm.get("nombre_usuario")?.value;
     if (el_nombre_usuario) {
       this.loginService.guardar_datos_login = el_nombre_usuario;
+    
     }
   }
 }

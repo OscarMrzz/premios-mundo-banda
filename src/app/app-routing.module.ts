@@ -7,8 +7,12 @@ import { NominacionesComponent } from './page/nominacion/nominaciones.component'
 import { VotacionesComponent } from './page/votaciones/votaciones.component';
 import { VotacionesFinalComponent } from './page/votaciones-final/votaciones-final.component';
 import { LoginComponent } from './page/login/login.component';
-import { asistente_adminGuard, jurado_adminGuard } from './guards/permisos.guard';
+import { asistente_adminGuard, jurado_adminGuard, solo_admin } from './guards/permisos.guard';
 import { NominadosComponent } from './page/nominados/nominados.component';
+import { RegistrosvotosComponent } from './page/registrovotos/registrosvotos/registrosvotos.component';
+import { PanelControlComponent } from './panel-control/panel-control.component';
+import { ResultadosComponent } from './resultados/resultados.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -18,7 +22,11 @@ const routes: Routes = [
   { path: "nominaciones", component: NominacionesComponent, canActivate:[asistente_adminGuard] },
   { path: "votaciones", component: VotacionesComponent,canActivate:[jurado_adminGuard] },
   { path: "votaciones-final", component: VotacionesFinalComponent,canActivate:[jurado_adminGuard] },
+  { path: "registros-vostos", component: RegistrosvotosComponent,canActivate:[jurado_adminGuard] },
   { path: "login", component: LoginComponent },
+  { path: "controles", component: PanelControlComponent,canActivate:[jurado_adminGuard]  },
+  { path: "resultados", component: ResultadosComponent,canActivate:[solo_admin]  },
+  { path: "admin", component: AdminComponent,canActivate:[solo_admin]  },
 
 ];
 

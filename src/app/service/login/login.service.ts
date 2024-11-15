@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UsuariosService } from '../usuarios/usuarios.service';
 import { UsuariosModel } from 'src/app/models/usuarios';
+import { RecopiladorService } from '../recopilador/recopilador.service';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -10,12 +11,16 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
   usurio: UsuariosModel={}
-  
+   
 
   private loginData: BehaviorSubject<UsuariosModel> =new BehaviorSubject<UsuariosModel>({})
   private loginStatus: BehaviorSubject<boolean> =new BehaviorSubject<boolean>(false)
 
-  constructor(private usariosServices:UsuariosService, private  router:Router) { }
+  constructor(
+    private usariosServices:UsuariosService, 
+    private  router:Router,
+    private recopiladorservice:RecopiladorService
+  ) { }
 
   get obtener_datos_login(){
     return this.loginData.asObservable()
@@ -27,7 +32,10 @@ export class LoginService {
         this.usurio=res
         this.loginData.next(this.usurio)
         this.cambiar_status=true
+        this.recopiladorservice.agregar_datos_voto({"id_usuario":this.usurio["id_usuario"]})
+
         this.router.navigate([""])
+       
 
 
       },

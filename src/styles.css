@@ -485,7 +485,44 @@ table {
  }
 
 
- /*Media query*/
+
+ .button-votar{
+    height: 50px;
+    background-color: var(--color-secondary);
+    color: var(--color-principal);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+ }
+.container-control{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ .card-panel-de-control{
+    display: flex;
+    width: 210px;
+    height: 200px;
+    background-color: var(--color-secondary);
+  
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+ }
+ .panel-de-control__title{
+    color: var(--color-principal);
+ }
+
+ .card-panel-de-control:hover{
+    background-color: #2e97ac;
+
+ }
+
+ /*------------------Media query-----------------------*/
 
  @media (min-width: 300px){
 

@@ -18,6 +18,10 @@ import { VotacionesComponent } from './page/votaciones/votaciones.component';
 import { VotacionesFinalComponent } from './page/votaciones-final/votaciones-final.component';
 import { LoginComponent } from './page/login/login.component';
 import { NominadosComponent } from './page/nominados/nominados.component';
+import { RegistrosvotosComponent } from './page/registrovotos/registrosvotos/registrosvotos.component';
+import { PanelControlComponent } from './panel-control/panel-control.component';
+import { ResultadosComponent } from './resultados/resultados.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -36,7 +40,11 @@ import { NominadosComponent } from './page/nominados/nominados.component';
 
     VotacionesFinalComponent,
      LoginComponent,
-     NominadosComponent
+     NominadosComponent,
+     RegistrosvotosComponent,
+     PanelControlComponent,
+     ResultadosComponent,
+     AdminComponent
   ],
   imports: [
     BrowserModule,

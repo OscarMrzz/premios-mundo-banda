@@ -1,4 +1,6 @@
 <div class="navbar">
+  
+ 
     <nav class="navbar__menu">
       <ul class="menu__opciones">
         <li  class="menu__opcion"><a routerLink="/login">Login</a></li>
@@ -8,17 +10,16 @@
         <li *ngIf="estado"  class="menu__opcion"><a routerLink="/nominados">Nominados</a></li>
         <li *ngIf="estado"  class="menu__opcion"><a routerLink="/votaciones">Votaciones</a></li>
       </ul>
-    </nav>
+    </nav> 
 </div><div class="navbar">
-  <nav class="navbar__menu">
+  <nav class="navbar__menu"> 
     <ul class="menu__opciones">
       <li class="menu__opcion"><a routerLink="">Inicio</a></li>
-      <li *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente')" class="menu__opcion"><a routerLink="/usuarios">Usuarios</a></li>
-      <li *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente')" class="menu__opcion"><a routerLink="/categorias">Categorías</a></li>
-      <li *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente')" class="menu__opcion"><a routerLink="/nominados">Nominados</a></li>
-      <li *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente')"class="menu__opcion"><a routerLink="/nominaciones">Nominaciones</a></li>
-      <li *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'jurado')" class="menu__opcion"><a routerLink="/votaciones">Votaciones</a></li>
-      <li class="menu__opcion"><a routerLink="/login">Login</a></li>
+     
+
+      <li *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente')" class="menu__opcion"><a routerLink="/controles">Panel de control</a></li>
+      <li  *ngIf="!estado"  class="menu__opcion"><a routerLink="/login">Login</a></li>
+      <li  *ngIf="estado" (click)="cerrar_secion()"  class="menu__opcion"><a routerLink="/login" >Logout</a></li>
     </ul>
   </nav>
 </div>
