@@ -3,13 +3,7 @@
         
         <form (ngSubmit)="agregar_editar(formulario)" class="container-form__form" #formulario="ngForm">
             <div class="form__container__input">
-                <label class="form__label" for="">Nominado</label>
-                <select  [(ngModel)]="datosFormulario.id_nominado" class="form__input" name="nominado" id="">
-                    <option value="" disabled selected></option>
-                    <option *ngFor="let nominado of nominados" [value]="nominado.id_nominado">
-                      {{ nominado.nombre_nominado }}
-                    </option>
-                  </select>
+              
                   <label class="form__label" for="">categoria</label>
                   <select  [(ngModel)]="datosFormulario.id_categoria" class="form__input" name="categorias" id="">
                     <option value="" disabled selected></option>
@@ -17,6 +11,13 @@
                       {{ categoria.nombre_categoria }}
                     </option>
                   </select>
+                  <label class="form__label" for="">Nominado</label>
+                  <select  [(ngModel)]="datosFormulario.id_nominado" class="form__input" name="nominado" id="">
+                      <option value="" disabled selected></option>
+                      <option *ngFor="let nominado of nominados" [value]="nominado.id_nominado">
+                        {{ nominado.nombre_nominado }}
+                      </option>
+                    </select>
                 
     
             </div>

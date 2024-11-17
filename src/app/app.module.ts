@@ -19,8 +19,8 @@ import { VotacionesFinalComponent } from './page/votaciones-final/votaciones-fin
 import { LoginComponent } from './page/login/login.component';
 import { NominadosComponent } from './page/nominados/nominados.component';
 import { RegistrosvotosComponent } from './page/registrovotos/registrosvotos/registrosvotos.component';
-import { PanelControlComponent } from './panel-control/panel-control.component';
-import { ResultadosComponent } from './resultados/resultados.component';
+import { PanelControlComponent } from './page/panel-control/panel-control.component';
+import { ResultadosComponent } from './page/resultados/resultados.component';
 import { AdminComponent } from './admin/admin.component';
 
 

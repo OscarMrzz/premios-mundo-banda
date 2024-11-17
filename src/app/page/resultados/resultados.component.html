@@ -1,0 +1,29 @@
+<div class="container-resultados">
+    <div *ngFor="let categoria of categorias; let indice = index">
+      <h2 class="resultados__title">{{ categoria.nombre_categoria }}</h2>
+      <div class="resultados">
+        <table class="resultados__tabla">
+          <thead class="resultados__encabezados">
+            <tr>
+              <th>N°</th>
+              <th class="resultados__encabezado">Nominado</th>
+              <th class="resultados__encabezado">Votos</th>
+              <th class="resultados__encabezado">Porcentaje</th>
+            </tr>
+          </thead>
+          <tbody class="resultados__cuerpo">
+            <!-- Llama al método para filtrar nominados -->
+
+              <tr *ngFor="let nominado of filtrarPorcategoria(categoria.id_categoria); let i =index">
+                <td>{{i +1}}</td>
+                <td class="cuerpo_celda">{{ nominado.nombre_nominado }}</td>
+                <td class="cuerpo_celda">{{nominado.voto}}</td>
+                <td class="cuerpo_celda">{{nominado.porcentaje}}%</td>
+              </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

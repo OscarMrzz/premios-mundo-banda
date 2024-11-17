@@ -522,6 +522,33 @@ table {
 
  }
 
+
+ /*Resultados*/
+.container-resultados{
+    max-width: 600px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ .resultados{
+    justify-content: space-between;
+    width: 100%;
+    height: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+    background-color: var(--color-principal);
+    border: 3px solid var(--color-secondary);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); 
+    overflow-y: auto;
+
+ }
+
+ .resultados__title{
+    color: var(--color-secondary);
+    margin-top: 80px;
+ }
+
  /*------------------Media query-----------------------*/
 
  @media (min-width: 300px){

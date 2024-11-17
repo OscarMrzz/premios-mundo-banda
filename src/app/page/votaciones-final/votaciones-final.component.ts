@@ -29,7 +29,7 @@ export class VotacionesFinalComponent {
       res=>{
         this.categiriaseleccionada=res
       }
-    )
+    )       
 
     this.nominacionesservices.get_listar_para_tabla().subscribe(
       res=>{

@@ -26,7 +26,7 @@ export class VotacionesService {
   }
 
   get_listar_para_tabla(){
-    console.log("pues mira que aqui llegamos")
+    
     return this.http.get(`${this.API_URI}/${this.direccion}/listar_para_tabla`)
   }
  

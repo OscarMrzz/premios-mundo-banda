@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { UsuariosModel } from '../models/usuarios';
+import { UsuariosModel } from '../../models/usuarios';
 import { Observable } from 'rxjs';
-import { LoginService } from '../service/login/login.service';
+import { LoginService } from '../../service/login/login.service';
 
 @Component({
   selector: 'app-panel-control',
