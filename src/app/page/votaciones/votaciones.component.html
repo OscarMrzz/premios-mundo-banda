@@ -1,5 +1,5 @@
 <div class="container-votaciones" >
-<div  class="container-categorias-card" *ngFor="let categoria of categorias; let  indice = index">
+<div  class="container-categorias-card" *ngFor="let categoria of categoriaFiltrada; let  indice = index">
     <div (click)="capturar_categoria_seleccionada(indice)" class="categoria-card">
         <h2 class="title-categoria">{{categoria.nombre_categoria}}</h2>
         <p class="info-categoria">
@@ -8,4 +8,4 @@
         
     </div>
 </div>
-</div>
+</div> 

@@ -47,7 +47,7 @@ export class VotacionesFinalComponent {
   let elVotoFinal =this.categiriaseleccionada
   if (elVotoFinal) {
     this.votacionesservices.save(elVotoFinal).subscribe(
-      () => this.router.navigate([""]),
+      () => this.router.navigate(["votaciones"]),
       err => console.error("Error al votar:", err)
     );
   } else {

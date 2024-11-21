@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { retry } from 'rxjs';
+import { NominacionModel } from 'src/app/models/nominacion';
 import { VotacionesModel } from 'src/app/models/votaciones';
+import { VotosModel } from 'src/app/models/VotosResultados';
 import { CategoriasService } from 'src/app/service/categorias/categorias.service';
 import { NominacionesService } from 'src/app/service/nominacion/nominacion.service';
 import { VotacionesService } from 'src/app/service/votaciones/votaciones.service';
@@ -13,7 +15,7 @@ import { VotacionesService } from 'src/app/service/votaciones/votaciones.service
 export class ResultadosComponent implements OnInit {
   categorias: any = [];
   nominados: any = [];
-  nominadosFiltrados: any = []; // Variable para almacenar los nominados filtrados
+  nominadosFiltrados: VotosModel[] = []; // Variable para almacenar los nominados filtrados
   votaciones:any =[]
   Votossumados:any=[]
 
@@ -60,11 +62,7 @@ export class ResultadosComponent implements OnInit {
 
   filtrarPorcategoria(id_categoria:number){
     this.nominadosFiltrados=this.nominados.filter((datos:any) =>datos.id_categoria===id_categoria)
-    this.nominadosFiltrados.forEach((element: { voto: number,porcentaje:number}) => {
-      element.voto=0
-      element.porcentaje =0
-      
-    });
+   ;
   for (let nominado of this.nominadosFiltrados){
     for(let key in this.Votossumados){
       for(let key_key in this.Votossumados[key]){
@@ -93,7 +91,7 @@ export class ResultadosComponent implements OnInit {
 
 
   for (let nominado of this.nominadosFiltrados){
-    for(let key in this.Votossumados){
+    for(let key in this.Votossumados){ 
       for(let key_key in this.Votossumados[key]){
      
 

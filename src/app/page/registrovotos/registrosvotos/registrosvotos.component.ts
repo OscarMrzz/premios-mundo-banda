@@ -34,7 +34,7 @@ export class RegistrosvotosComponent {
     )
 
   
-    this,this.loginservice.obtener_datos_login.subscribe(
+    this.loginservice.obtener_datos_login.subscribe(
       res=>{
         this.datosLogin=res
       }

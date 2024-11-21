@@ -20,7 +20,7 @@ export class LoginService {
     private usariosServices:UsuariosService, 
     private  router:Router,
     private recopiladorservice:RecopiladorService
-  ) { }
+  ) { } 
 
   get obtener_datos_login(){
     return this.loginData.asObservable()
@@ -30,11 +30,25 @@ export class LoginService {
     this.usariosServices.getone(nombre_usuario).subscribe(
       res=>{
         this.usurio=res
+    
         this.loginData.next(this.usurio)
-        this.cambiar_status=true
-        this.recopiladorservice.agregar_datos_voto({"id_usuario":this.usurio["id_usuario"]})
+        
+       
 
-        this.router.navigate([""])
+        if(Number(this.usurio.acceso)===Number(true)){
+          this.cambiar_status=true
+          this.recopiladorservice.agregar_datos_voto({"id_usuario":this.usurio["id_usuario"]})
+          this.router.navigate([""])
+        }
+        if(Number(this.usurio.acceso)===Number(false)){
+          alert("Esta cuenta no tiene acceso")
+    
+        }
+
+
+
+
+     
        
 
 

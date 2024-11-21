@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     if (el_nombre_usuario) {
       this.loginService.guardar_datos_login = el_nombre_usuario;
     
-    }
+    } 
   }
 }
  

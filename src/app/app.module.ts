@@ -21,7 +21,7 @@ import { NominadosComponent } from './page/nominados/nominados.component';
 import { RegistrosvotosComponent } from './page/registrovotos/registrosvotos/registrosvotos.component';
 import { PanelControlComponent } from './page/panel-control/panel-control.component';
 import { ResultadosComponent } from './page/resultados/resultados.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './page/admin/admin.component';
 
 
 

@@ -57,7 +57,7 @@ form,input, select, textarea, button, labe{
 :root{
     --color-principal: #ffffff;
     --color-secondary: #1f7a8c;
-    --color-tercero: #e8e8e8;
+    --color-tercero: #dcdcdc;
     --color-cuarto: #022b3a;
     --color-quinto: #001219;
 }
@@ -69,7 +69,7 @@ body{
     width: 100%;
     height: 100vh;
    
-    background-color: #e8e8e8;
+    background-color:var(--color-tercero);
 }
 
 .contenedor-pricipal{
@@ -548,6 +548,37 @@ table {
     color: var(--color-secondary);
     margin-top: 80px;
  }
+
+
+
+
+
+/* acceso */ 
+.accesos__form{
+    margin: 35px;
+}
+.check__grup{
+   
+    font-size: 20px;
+    display: flex;
+}
+.acceso__title{
+    color: var(--color-quinto);
+    
+}
+
+.check__label{
+    width: 120px;
+    
+    color: var(--color-secondary);
+}
+.check__input{
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
+   
 
  /*------------------Media query-----------------------*/
 

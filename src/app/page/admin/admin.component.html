@@ -1,0 +1,25 @@
+<div>
+  <div class="card_accesos">
+    <form class="accesos__form" >
+      <h2 class="acceso__title">Acceso</h2>
+
+      <div class="check__grup">
+        <label class="check__label" >Asistente</label>
+        <input class="check__input" type="checkbox" [checked]="acceso.asistente" (change)="Dar_quitar_permisos($event,'asistente')">
+      </div>
+      <div class="check__grup">
+        <label class="check__label">Jurado</label>
+        <input class="check__input" type="checkbox" [checked]="acceso.jurado"  (change)="Dar_quitar_permisos($event,'jurado')">
+      </div>
+      <div class="check__grup">
+        <label class="check__label" >Fiscal</label >
+        <input class="check__input"  type="checkbox" [checked]="acceso.fiscal" (change)="Dar_quitar_permisos($event,'fiscal')">
+      </div>
+       
+    </form>
+  </div>
+</div>
+
+
+
+
