@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import {UsuariosModel} from "../../models/usuarios"
 import { accesoModel } from 'src/app/models/acceso';
+import { loginModel } from 'src/app/models/login';
+
 import { permisosModel } from 'src/app/models/permisos';
 
 @Injectable({
@@ -28,11 +30,15 @@ export class UsuariosService {
   get(){
     return this.http.get(`${this.API_URI}/usuarios`)
   }
-  getone(nombre_usuario:string){
-    return this.http.get(`${this.API_URI}/usuarios/${nombre_usuario}`)
+  getone(DatosUsuario:loginModel){
+    return this.http.get(`${this.API_URI}/usuarios/${DatosUsuario.nombre_usuario}`)
 
   }
- getacceso() {
+  login(DatosLogin:loginModel){
+    return this.http.post(`${this.API_URI}/usuarios/login/${DatosLogin.nombre_usuario}`,DatosLogin)
+
+  }
+ getacceso() { 
     const Lospermisos = ["Admin", "asistente", "jurado", "fiscal"];
   
     // Obtener el estado actual de permisosData

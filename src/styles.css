@@ -148,6 +148,7 @@ body{
 .container__registros{
     margin-top: 50px;
     padding-top: 20px;
+    padding-bottom: 20px;
    display: grid;
    grid-template-areas: 
    "area-formulario area-tabla"
@@ -189,6 +190,27 @@ body{
    
 }
 
+.container__login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.card-login{
+    background-color: var(--color-principal);
+    width: 300px;
+    height: 350px;
+    border-radius: 25px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.login__title{
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 25px;
+}
 .area-formulario{
     grid-area: area-formulario;
 
@@ -321,12 +343,13 @@ body{
 .table-container{
     justify-content: space-between;
     width: 90%;
-    height: 70%;
+    height: 450px;
   
     background-color: var(--color-principal);
     border: 3px solid var(--color-secondary);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); 
     overflow-y: auto;
+    
  
 }
 
@@ -390,7 +413,7 @@ table {
  .container-form__form{
     background-color: var(--color-principal);
     width: 70%;
-    height: 70%;
+    height: 450px;
     
     margin-left: 10px;
     border: 3px solid var(--color-secondary);
@@ -589,7 +612,8 @@ table {
         overflow: auto;
   
     }
-    .ntainer__registros{
+  
+    .container__registros{
         margin-top: 50px;
         padding-top: 20px;
        display: grid;
@@ -607,6 +631,7 @@ table {
 
       .table-container{
         margin-left: 10px;
+        margin-bottom: 10px;
       }
 
  }
@@ -617,6 +642,7 @@ table {
     .container__registros{
         margin-top: 50px;
         padding-top: 20px;
+        padding-bottom: 20px;
        display: grid;
        grid-template-areas: 
        "area-formulario area-tabla"

@@ -17,6 +17,7 @@ export class AreausuariosComponent implements OnInit{
     nombre: '',
     apellido: '',
     nombre_usuario: '',
+    password: '',
     permisos: ''
   };
   editando =false

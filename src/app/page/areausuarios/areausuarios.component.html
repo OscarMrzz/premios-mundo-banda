@@ -9,8 +9,17 @@
             <input class="form__input" type="text" [(ngModel)]="datosFormulario.apellido" name="apellido">
             <label class="form__label" for="">Nombre de usuario</label>
             <input class="form__input" type="text"  [(ngModel)]="datosFormulario.nombre_usuario" name="nombre_usuario">
+            <label class="form__label" for="">Contraseña</label>
+            <input class="form__input" type="password"  [(ngModel)]="datosFormulario.password" name="password">
             <label class="form__label" for="">Autorizacion</label>
-            <input class="form__input" type="text"  [(ngModel)]="datosFormulario.permisos" name="permisos">
+            <select class="form__input" [(ngModel)]="datosFormulario.permisos" name="permisos" id="">
+                <option value="" disabled selected></option>
+                <option  value="asistente">Asistente</option>
+                <option  value="jurado">Jurado</option>
+                <option  value="Fiscal">Fiscal</option>
+
+            </select>
+           
 
         </div>
         <div class="container__form-button">
@@ -27,7 +36,7 @@
             <thead class="table__head">
                 <tr class="table__row">
                     <th class="table__row-th">Nombre</th>
-                    <th class="table__row-th">Apellido</th>
+                    <th class="table__row-th">Apellido</th> 
         
                     <th class="table__row-th">Username</th>
                     <th class="table__row-th">Autorisacion</th>

@@ -1,26 +1,26 @@
 <div class="container-control" >
-<div class="card-panel-de-control" *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente')"  routerLink="/usuarios">
+<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')"  routerLink="/usuarios">
     <h2 class="panel-de-control__title" >Usuarios</h2>
 </div>
-<div class="card-panel-de-control" *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente')"  routerLink="/categorias">
+<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')"  routerLink="/categorias">
     <h2 class="panel-de-control__title">Categorias</h2>
 </div>
-<div class="card-panel-de-control" *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente')"  routerLink="/nominados">
+<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')"  routerLink="/nominados">
     <h2 class="panel-de-control__title">Nominados</h2>
 </div>
-<div class="card-panel-de-control" *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente')"  routerLink="/nominaciones">
+<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')"  routerLink="/nominaciones">
     <h2 class="panel-de-control__title">Nomianciones</h2>
 </div>
-<div class="card-panel-de-control" *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'jurado')"  routerLink="/registros-vostos">
+<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'jurado')"  routerLink="/registros-vostos">
     <h2 class="panel-de-control__title">Registro</h2>
 </div>
-<div class="card-panel-de-control" *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'jurado')"  routerLink="/votaciones">
+<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'jurado')"  routerLink="/votaciones">
     <h2 class="panel-de-control__title">Votaciones</h2>
 </div>
-<div class="card-panel-de-control" *ngIf="estado && ((usuario$ | async)?.permisos === 'admin')"  routerLink="/resultados">
+<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin')"  routerLink="/resultados">
     <h2 class="panel-de-control__title">Resultados</h2>
 </div>
-<div class="card-panel-de-control" *ngIf="estado && ((usuario$ | async)?.permisos === 'admin')"  routerLink="/admin">
+<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin')"  routerLink="/admin">
     <h2 class="panel-de-control__title">Administrador</h2>
 </div>
 </div>

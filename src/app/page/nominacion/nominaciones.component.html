@@ -9,7 +9,7 @@
                     <option value="" disabled selected></option>
                     <option *ngFor="let categoria of categorias" [value]="categoria.id_categoria">
                       {{ categoria.nombre_categoria }}
-                    </option>
+                    </option> 
                   </select>
                   <label class="form__label" for="">Nominado</label>
                   <select  [(ngModel)]="datosFormulario.id_nominado" class="form__input" name="nominado" id="">

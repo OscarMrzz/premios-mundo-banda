@@ -1,16 +1,22 @@
-<div class="container__registros">
-    <div class="area-formulario">
-        <h1>El este</h1>
-   
+<div class="container__login">
+
+      
+      <div class="card-login">
+     <h2 class="login__title">Premios Mundo banda</h2>
       <form [formGroup]="loginForm">
         <div class="form__container__input">
           <label class="form__label" for="">Nombre de usuario</label>
-          <input class="form__input" formControlName="nombre_usuario">
+          <input type="text" class="form__input" formControlName="nombre_usuario">
+        </div>
+        <div class="form__container__input">
+          <label class="form__label" for="">Contraseña</label>
+          <input type="password" class="form__input" formControlName="password_usuario">
         </div>
         <div class="container__form-button">
           <button type="submit" class="button" (click)="aceptar()">Aceptar</button>
         </div>
       </form>
     </div>
+
   </div>
-   
+    

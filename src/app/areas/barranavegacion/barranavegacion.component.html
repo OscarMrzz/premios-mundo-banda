@@ -1,23 +1,14 @@
 <div class="navbar">
   
  
-    <nav class="navbar__menu">
-      <ul class="menu__opciones">
-        <li  class="menu__opcion"><a routerLink="/login">Login</a></li>
-        <li class="menu__opcion"><a routerLink="" >inicio</a></li>
-        <li *ngIf="estado && ( usuario$ |async)?.permisos==='admin' || estado  && ( usuario$ |async)?.permisos==='asistente'"   class="menu__opcion"><a routerLink="/usuarios">Usuarios</a></li>
-        <li *ngIf="estado" class="menu__opcion"><a routerLink="/categorias">categorias</a></li>
-        <li *ngIf="estado"  class="menu__opcion"><a routerLink="/nominados">Nominados</a></li>
-        <li *ngIf="estado"  class="menu__opcion"><a routerLink="/votaciones">Votaciones</a></li>
-      </ul>
-    </nav> 
+
 </div><div class="navbar">
   <nav class="navbar__menu"> 
     <ul class="menu__opciones">
       <li class="menu__opcion"><a routerLink="">Inicio</a></li>
      
 
-      <li *ngIf="estado && ((usuario$ | async)?.permisos === 'admin' || (usuario$ | async)?.permisos === 'asistente' || (usuario$ | async)?.permisos === 'jurado')" class="menu__opcion"><a routerLink="/controles">Controles</a></li>
+      <li *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente' || usuario$?.permisos === 'jurado')" class="menu__opcion"><a routerLink="/controles">Controles</a></li>
       <li  *ngIf="!estado"  class="menu__opcion"><a routerLink="/login">Login</a></li>
       <li  *ngIf="estado" (click)="cerrar_secion()"  class="menu__opcion"><a routerLink="/login" >Logout</a></li>
     </ul>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UsuariosModel } from '../../models/usuarios';
 import { Observable } from 'rxjs';
 import { LoginService } from '../../service/login/login.service';
+import { tokenModel } from 'src/app/models/toke';
 
 @Component({
   selector: 'app-panel-control',
@@ -9,17 +10,19 @@ import { LoginService } from '../../service/login/login.service';
   styleUrls: ['./panel-control.component.css']
 })
 export class PanelControlComponent {
-  usuario$!: Observable<UsuariosModel>;
+  usuario$!:tokenModel;
+  datosToken:tokenModel=JSON.parse(localStorage.getItem("DatosTokenLS") ?? "")
   estado: boolean = false; // Cambiamos estado$ a una variable booleana
   constructor(
     private loginService: LoginService
   ){}
 
   ngOnInit() {
-    this.usuario$ = this.loginService.obtener_datos_login;
-    this.loginService.obtener_stado.subscribe(value => {
-      this.estado = value;
+    this.usuario$ = this.datosToken ?? {permisos:""};
+  this.estado=this.datosToken.acceso ?? false
+  console.log(this.datosToken)
+    
      
-    });
+    };
 }
-}
+

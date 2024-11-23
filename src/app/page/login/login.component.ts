@@ -6,6 +6,7 @@ import { UsuariosModel } from 'src/app/models/usuarios';
 import { LoginService } from '../../service/login/login.service';
 import { Observable } from 'rxjs';
 import { RecopiladorService } from 'src/app/service/recopilador/recopilador.service';
+import { loginModel } from 'src/app/models/login';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
  
 
   loginForm = this.formBuilder.group({
-    nombre_usuario: ["", Validators.required]
+    nombre_usuario: ["", Validators.required],
+    password_usuario: ["", Validators.required]
   });
 
   constructor(
@@ -39,11 +41,26 @@ export class LoginComponent implements OnInit {
   }
 
   aceptar() {
-    const el_nombre_usuario = this.loginForm.get("nombre_usuario")?.value;
-    if (el_nombre_usuario) {
-      this.loginService.guardar_datos_login = el_nombre_usuario;
     
-    } 
-  }
-}
+
+  
+      // Asegúrate de inicializar el objeto Datoslogin antes de usarlo
+      let Datoslogin: loginModel = {
+        nombre_usuario: '',
+        password: ''
+      };
+  
+      // Asignar valores correctamente verificando que no sean null o undefined
+      Datoslogin.nombre_usuario = this.loginForm.get("nombre_usuario")?.value ?? '';
+      Datoslogin.password = this.loginForm.get("password_usuario")?.value ?? '';
+  
+      if (Datoslogin.nombre_usuario) {
+        this.loginService.login(Datoslogin);
+
+      }
+      }
+    }
+ 
+  
+
  
