@@ -21,6 +21,7 @@ export class BarranavegacionComponent implements OnInit {
     const datosLlegadaToke = localStorage.getItem("DatosTokenLS");
     this.loginService.obtener_stado.subscribe(
       (res:boolean)=>{
+    
           this.estadoInicioSecion=res
           if (datosLlegadaToke) {
             try {
@@ -34,7 +35,7 @@ export class BarranavegacionComponent implements OnInit {
     this.usuario$ = this.datosToken ?? { permisos: "" };
     this.estado = this.datosToken?.acceso ?? false;
 
-    console.log("Datos del token:", this.datosToken);
+ 
       }
     )
 

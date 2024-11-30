@@ -36,8 +36,8 @@ export class VotacionesService {
   }
   // aqui se va complicar vamos a ir a modelado
   save(modelo:Elmodelo){
-    console.log("estos es el voto que se guardara")
-    console.log(modelo)
+    
+  
    
     
     

@@ -50,11 +50,11 @@ export class CategoriasComponent {
   agregar_editar(formulario:any){
 
     if(this.editando){
-      console.log("Esto vamos a editar: ",this.datosFormulario)
+      
       let elid =String( this.datoscapturadoparaedicion.id_categoria)
       this.categoriaservice.update(elid ,this.datosFormulario).subscribe(respuesta =>{
         this.datosFormulario["id_categoria"]=0
-        console.log("Edicion exitosa",respuesta)
+        console.log("Edicion exitosa")
         this.get()
         this.editando =false
       },error=>{
@@ -67,7 +67,7 @@ export class CategoriasComponent {
     let datosCapturadosForm: CategoriasModel= this.datosFormulario
     
     this.categoriaservice.save(datosCapturadosForm).subscribe(respuesta=>{
-      console.log("Usuario agregado exitosamente", respuesta)
+     
       this.get()
     }, error=>{
       console.error("error al agregar el usuario", error)
@@ -83,9 +83,9 @@ export class CategoriasComponent {
   }
 
   eliminar(id: string){
-    console.log("iniciando eliminacion")
+  
     this.categoriaservice.delete(id).subscribe(respuesta=>{
-      console.log("usuario eliminado exitosamente",respuesta)
+      console.log("usuario eliminado exitosamente")
       this.get()
     },error=>{
       console.error("error al eliminar el usuario",error)

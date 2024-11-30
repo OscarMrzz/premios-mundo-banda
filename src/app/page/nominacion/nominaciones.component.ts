@@ -92,7 +92,7 @@ export class NominacionesComponent {
 
     this.datosFormulario =this.datoscapturadoparaedicion
     this.editando= true
-   console.log( this.datoscapturadoparaedicion)
+
   }
 
   agregar_editar(formulario:any){

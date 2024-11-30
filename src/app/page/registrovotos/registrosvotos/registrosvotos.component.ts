@@ -5,6 +5,7 @@ import { VotacionesModel } from 'src/app/models/votaciones';
 import {registroVotacionModel} from "src/app/models/registrosVotaciones"
 import { LoginService } from 'src/app/service/login/login.service';
 import { UsuariosModel } from 'src/app/models/usuarios';
+import { tokenModel } from 'src/app/models/toke';
 
 @Component({
   selector: 'app-registrosvotos',
@@ -12,7 +13,9 @@ import { UsuariosModel } from 'src/app/models/usuarios';
   styleUrls: ['./registrosvotos.component.css']
 })
 export class RegistrosvotosComponent {
+  DatosTokem:tokenModel = JSON.parse(localStorage.getItem("DatosTokenLS") ?? "{}")
 
+  
   votaciones:any=[]
   votacionesFiltradas:any=[]
   DatosVotacio:VotacionesModel={}
@@ -26,6 +29,7 @@ export class RegistrosvotosComponent {
 
   }
   ngOnInit(){
+  
     this.get_listar_para_tabla()
     this.recopiladorservice.obtener_datos_voto.subscribe(
       res=>{
@@ -56,10 +60,10 @@ export class RegistrosvotosComponent {
     this.votacionesservice.get_listar_para_tabla().subscribe(
       res=>{
         this.votaciones =res
-        if(this.datosLogin.permisos==="admin"){
+        if(this.DatosTokem.permisos==="admin"){
           this.votacionesFiltradas=this.votaciones
         }else{
-        this.votacionesFiltradas=this.votaciones.filter((datos:registroVotacionModel)=>datos.id_usuario===this.DatosVotacio["id_usuario"])
+        this.votacionesFiltradas=this.votaciones.filter((datos:registroVotacionModel)=>datos.id_usuario===this.DatosTokem.id_usuario)
       }
     }
     )

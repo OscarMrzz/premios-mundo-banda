@@ -9,12 +9,14 @@ import { registroVotacionModel } from 'src/app/models/registrosVotaciones';
 import { VotacionesModel } from 'src/app/models/votaciones';
 import { RegistrosvotosService } from 'src/app/service/registrosvotos/registrosvotos.service';
 import { CategoriasModel } from 'src/app/models/categorias';
+import { tokenModel } from 'src/app/models/toke';
 @Component({
   selector: 'app-votaciones',
   templateUrl: './votaciones.component.html',
   styleUrls: ['./votaciones.component.css']
 })
 export class VotacionesComponent {
+  DatosTokem:tokenModel = JSON.parse(localStorage.getItem("DatosTokenLS") ?? "{}")
   votaciones:any=[]
   categorias:any =[]
   categoriaFiltrada:any=[]
@@ -73,7 +75,7 @@ export class VotacionesComponent {
     
             }else{
     
-            this.votacionesFiltradas=this.votaciones.filter((datos:registroVotacionModel)=>datos.id_usuario===this.DatosVotacio["id_usuario"])
+            this.votacionesFiltradas=this.votaciones.filter((datos:registroVotacionModel)=>datos.id_usuario===this.DatosTokem.id_usuario)
               
        
     

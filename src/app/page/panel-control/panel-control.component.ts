@@ -20,7 +20,7 @@ export class PanelControlComponent {
   ngOnInit() {
     this.usuario$ = this.datosToken ?? {permisos:""};
   this.estado=this.datosToken.acceso ?? false
-  console.log(this.datosToken)
+
     
      
     };

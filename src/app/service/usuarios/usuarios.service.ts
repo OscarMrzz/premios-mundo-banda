@@ -6,6 +6,7 @@ import { accesoModel } from 'src/app/models/acceso';
 import { loginModel } from 'src/app/models/login';
 
 import { permisosModel } from 'src/app/models/permisos';
+import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,13 @@ import { permisosModel } from 'src/app/models/permisos';
   providedIn: 'root' 
 })
 export class UsuariosService {
+  static getacceso() {
+    throw new Error('Method not implemented.');
+  }
   API_URI="http://localhost:3000/api"
 
 
-  
+   
   
  
   private permisosData: BehaviorSubject<permisosModel> =new BehaviorSubject<permisosModel>({admin:true,
@@ -27,11 +31,15 @@ export class UsuariosService {
   })
 
   constructor(private http:HttpClient) { }
-  get(){
-    return this.http.get(`${this.API_URI}/usuarios`)
+  get():Observable<UsuariosModel[]>{
+    return this.http.get<UsuariosModel[]>(`${this.API_URI}/usuarios`)
   }
   getone(DatosUsuario:loginModel){
     return this.http.get(`${this.API_URI}/usuarios/${DatosUsuario.nombre_usuario}`)
+
+  }
+  getOneAcceso(nombre_usuario:string){
+    return this.http.get(`${this.API_URI}/usuarios/AccesoUsuario/${nombre_usuario}`)
 
   }
   login(DatosLogin:loginModel){
@@ -80,8 +88,8 @@ export class UsuariosService {
     
   }
 
-  update(id:string, updategame:UsuariosModel): Observable<UsuariosModel>{
-    return this.http.put(`${this.API_URI}/usuarios/update/${id}`,updategame)
+  update(id_usuario:string, updategame:UsuariosModel): Observable<UsuariosModel>{
+    return this.http.put(`${this.API_URI}/usuarios/update/${id_usuario}`,updategame)
   }
   update_acceso(permisos: string, acceso: boolean): Observable<any> {
     const url = `${this.API_URI}/usuarios/acceso/${permisos}`;

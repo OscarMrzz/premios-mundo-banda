@@ -16,7 +16,8 @@ export class RecopiladorService {
   }
 
   agregar_datos_voto(voto:VotacionesModel){
-   const datos_voto_actual =this.VotoData.getValue()
+    const datos_voto_actual =this.VotoData.getValue()
     this.VotoData.next({...datos_voto_actual, ...voto})
+   
   }
 }

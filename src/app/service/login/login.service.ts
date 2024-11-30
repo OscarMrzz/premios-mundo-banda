@@ -51,7 +51,8 @@ export class LoginService {
 
         if(Number(this.usurio.acceso)===Number(true)){
           this.cambiar_status=true
-          this.recopiladorservice.agregar_datos_voto({"id_usuario":this.usurio["id_usuario"]})
+         
+          
         
           this.router.navigate([""])
         

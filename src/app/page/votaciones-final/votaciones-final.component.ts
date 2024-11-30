@@ -4,6 +4,7 @@ import { RecopiladorService } from 'src/app/service/recopilador/recopilador.serv
 import { NominacionesService } from 'src/app/service/nominacion/nominacion.service';
 import { VotacionesService } from 'src/app/service/votaciones/votaciones.service';
 import { Router } from '@angular/router';
+import { tokenModel } from 'src/app/models/toke';
 
 @Component({
   selector: 'app-votaciones-final',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./votaciones-final.component.css']
 })
 export class VotacionesFinalComponent {
+  DatosTokem:tokenModel = JSON.parse(localStorage.getItem("DatosTokenLS") ?? "{}")
   categiriaseleccionada:VotacionesModel={}
   nominados:any=[]
   nominadosFiltrados:any=[]
@@ -43,6 +45,8 @@ export class VotacionesFinalComponent {
 
  votar(indice:number){
   const nominadoSeleccionado=this.nominadosFiltrados[indice]
+
+  this.recopiladorservice.agregar_datos_voto({"id_usuario":this.DatosTokem.id_usuario})
   this.recopiladorservice.agregar_datos_voto({"id_nominado":nominadoSeleccionado["id_nominado"]})
   let elVotoFinal =this.categiriaseleccionada
   if (elVotoFinal) {

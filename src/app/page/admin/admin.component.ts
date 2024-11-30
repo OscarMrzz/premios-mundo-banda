@@ -49,7 +49,7 @@ export class AdminComponent {
     this.usuariosservices.update_acceso(permiso, true).subscribe(
       res => {
         this.getAccesoUsuarios()
-        console.log('Respuesta del servidor:', res);
+       
         
       },
       err => {
@@ -63,7 +63,7 @@ export class AdminComponent {
     this.usuariosservices.update_acceso(permiso, false).subscribe(
       res => {
         this.getAccesoUsuarios()
-        console.log('Respuesta del servidor:', res);
+   
         
       },
       err => {
