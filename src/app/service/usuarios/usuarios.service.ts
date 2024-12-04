@@ -19,7 +19,7 @@ export class UsuariosService {
     throw new Error('Method not implemented.');
   }
   //API_URI="http://localhost:3000/api"
- API_URI="https://server-premios-mundo-banda-production.up.railway.app"
+ API_URI="https://server-premios-mundo-banda-production.up.railway.app/api"
 
 
    
