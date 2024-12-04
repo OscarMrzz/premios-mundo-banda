@@ -9,7 +9,7 @@ import {NominadosModel} from "../../models/nominados"
 export class NominadosService {
 
  //API_URI="http://localhost:3000/api"
- API_URI="https://server-premios-mundo-banda-production.up.railway.app"
+ API_URI="https://premios-mundo-banda-production.up.railway.app"
 
   constructor(private http:HttpClient) { }
   get(){
