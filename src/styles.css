@@ -66,6 +66,7 @@ form,input, select, textarea, button, labe{
     font-family: "Poppins", sans-serif;
 }
 body{
+    overflow-x: hidden;
     width: 100%;
     height: 100vh;
    
@@ -246,7 +247,7 @@ body{
 /* HOME */
 
 .portada{
-    background-image: url(/assets/img/portada1.jpg);
+    background-image: url(/assets/img/tambor1.jpg);
     display: flex;
     background-size: cover;
     width: 100%;
@@ -258,10 +259,15 @@ body{
 
 
 .portada__title{
+    display: flex;
+    text-align: center;
+   
+
   
-   font-size: 50px;
+   font-size: 35px;
   
     color: var(--color-principal);
+    text-shadow:  5px 5px 4px rgba(0, 0, 0, 1);
     
    
 }
@@ -276,13 +282,17 @@ body{
     height: 700px;
    
     justify-content: center;
+    overflow-x: hidden;
   
 }
 
 .seccion__lugar{
     display: flex;
     flex-direction: column;
-    background-color: var(--color-cuarto);
+   
+    background-image: url(/assets/img/lugar3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 700px;
    
@@ -307,42 +317,91 @@ body{
     color: var(--color-quintoz)
 }
 .lugar__title{
-    margin-left: 35px;
-    font-size: 50px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-shadow:  5px 5px 4px rgba(0, 0, 0, 1);
+
+
+    font-size: 35px;
     color: var(--color-principal);
     
    
 }
 
 .bienvenida__detalle{
-    margin-left: 35px;
-    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 90%;
+    height: 50%;
     font-size: 20px;
+    
 }
 .lugar__detalle{
-    margin-left: 35px;
+    font-family: 'Open Sans', Arial, sans-serif; /* Tipografía clara y moderna */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-shadow:  2px 2px 4px rgba(0, 0, 0, 0.8);
+   
+    width: 90%;
     font-size: 20px;
     color: var(--color-principal);
-    width: 30%;
 }
 
 .galardon__title{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 90%;
     margin-left: 35px;
     font-size: 50px;
-    color: var(--color-quintoz)
+    color: var(--color-secondary)
 }
 
 .galardon__detalle{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 90%;
+    height: 50%;
     margin-left: 35px;
-    width: 30%;
+   
     font-size: 20px;
 }
+.galardon_premios{
+    column-count: 2; /* Dividir en 2 columnas */
+    column-gap: 20px; /* Espacio entre las columnas */
+}
+.galardon_premio{
+    margin-left: 10px;
+    margin-bottom: 10px; 
+}
+
+.galardon_premio::before {
+    content: "➤"; /* Flecha */
+    color: var(--color-secondary); /* Color de la flecha */
+    margin-right: 8px; /* Espacio entre la flecha y el texto */
+    font-size: 1.2em; /* Tamaño ajustado */
+  }
 
 /*tablas*/
 
+.table__head{
+    position: sticky;
+  top: 0; /* El encabezado se mantendrá en la parte superior cuando hagas scroll */
+  background-color: #fff; /* Color de fondo del encabezado (puedes cambiarlo) */
+  z-index: 1; /* Asegura que el encabezado esté por encima de las filas */
+
+}
+
 .table-container{
-    justify-content: space-between;
+
     width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     height: 450px;
   
     background-color: var(--color-principal);
@@ -360,16 +419,20 @@ table {
     border-collapse: collapse; /* Une las líneas de las celdas */
   }
   
-  th, td {
+  td {
     border: 1px solid var(--color-tercero); /* Establece las líneas alrededor de las celdas */
     padding: 8px;
     text-align: left;
   }
 
   .table__row-th{
+    border: 1px solid var(--color-tercero); /* Establece las líneas alrededor de las celdas */
+    text-align: left;
+    font-size: 16px;
     width: 30px;
     max-width: 30px;
     overflow: hidden;
+
   }
   .table__row-th-button{
     width: 5px;
@@ -408,14 +471,48 @@ table {
   }
 
 
+
+  /* FOOTER */
+
+ .footer_nombre{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+ }
+  
+  .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los íconos */
+  }
+  
+  .social-links li a {
+    color: #fff;
+    font-size: 1.5rem; /* Tamaño de los íconos */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links li a:hover {
+    color: #007bff; /* Cambia el color al pasar el mouse */
+  }
+  
+
+
   /*FORMULARIO*/
 
  .container-form__form{
     background-color: var(--color-principal);
-    width: 70%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     height: 450px;
     
-    margin-left: 10px;
+  
     border: 3px solid var(--color-secondary);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 
@@ -519,15 +616,16 @@ table {
  }
 .container-control{
     display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
+    flex-wrap: wrap; 
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
  .card-panel-de-control{
     display: flex;
-    width: 210px;
-    height: 200px;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
     background-color: var(--color-secondary);
   
     margin: 10px;
@@ -537,6 +635,7 @@ table {
     cursor: pointer;
  }
  .panel-de-control__title{
+    font-size: 15px;
     color: var(--color-principal);
  }
 
@@ -545,6 +644,14 @@ table {
 
  }
 
+ .icono-grande {
+    font-size: 40px; /* Ajusta el tamaño según lo necesites */
+    display: block;
+    margin-bottom: 10px; /* Espacio entre el ícono y el título */
+    text-align: center; /* Centrar el ícono */
+    color: var(--color-principal);
+  }
+  
 
  /*Resultados*/
 .container-resultados{
@@ -630,8 +737,11 @@ table {
     }
 
       .table-container{
-        margin-left: 10px;
-        margin-bottom: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+        
       }
 
  }

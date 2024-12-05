@@ -1,23 +1,31 @@
 <div class="contenedor-home">
     <div class="portada">
-        <h1 class="portada__title">PREMIOS MUNDO BANDA</h1>
+        <h1 class="portada__title">MUNDO BANDA AWORD</h1>
 
     </div>
     <section class="seccion__bienvenida">
-        <h2 class="bienvenido__title">Premios mundo banda</h2>
-        <p class="bienvenida__detalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque ad veniam ut sapiente nisi nemo ex, consequuntur sed soluta. At accusantium ad ipsa, veritatis doloribus ex eaque laborum accusamus.</p>
+        
+        <p class="bienvenida__detalle">El cine tiene los Oscars, la música tiene los Grammy, el streaming tiene los ESLAND y Mundo banda tiene MUNDO BANDA AWORD. Los premios que celebran la creatividad y el talento de los creadores de contenido, las bandas de guerras, las palillonas y la comunidad que rodea mundo banda.</p>
 
-    </section>
+    </section> 
     <section class="seccion__lugar">
-        <h2 class="lugar__title">UTH samepdro sula</h2>
-        <p class="lugar__detalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque ad veniam ut sapiente nisi nemo ex, consequuntur sed soluta. At accusantium ad ipsa, veritatis doloribus ex eaque laborum accusamus.</p>
+        <h2 class="lugar__title">UTH SPS</h2>
+        <p class="lugar__detalle">LA primera edición de los MUNDO BANDA AWORD se realizara en la UTH SPS el 08 de febrero del 2025</p>
 
     </section>
 
     <section class="seccion__galardon">
         <h2 class="galardon__title">Galardon</h2>
-        <p class="galardon__detalle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque ad veniam ut sapiente nisi nemo ex, consequuntur sed soluta. At accusantium ad ipsa, veritatis doloribus ex eaque laborum accusamus.</p>
+      
 
+        
+       <ul class="galardon_premios"  *ngFor="let categoria of categorias;">
+        <li class="galardon_premio">{{categoria.nombre_categoria}}</li>
+    
+    </ul>
+   
+
+        
     </section>
 
 </div>

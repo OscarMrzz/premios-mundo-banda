@@ -48,8 +48,8 @@
                     <tr class="table__row">
                         <td class="table__row-td">{{nominacion.nombre_nominado}}</td>
                         <td class="table__row-td">{{nominacion.nombre_categoria}}</td>
-                        <td class="table__row-td table__row-td-button" ><button class="button-table button-table-editar" (click)="capturarparaeditar(indice)">Editar</button></td>
-                        <td class="table__row-td table__row-td-button"><Button class="button-table button-table-eliminar" (click)="eliminar(nominacion.id_nominacion)">Eliminar</Button></td>
+                        <td class="table__row-td table__row-td-button" ><button class="button-table button-table-editar" (click)="capturarparaeditar(indice)"><i class="fas fa-edit"></i></button></td>
+                        <td class="table__row-td table__row-td-button"><Button class="button-table button-table-eliminar" (click)="eliminar(nominacion.id_nominacion)"><i class="fas fa-trash-alt"></i></Button></td>
                     </tr>
                 </tbody>
             </table>

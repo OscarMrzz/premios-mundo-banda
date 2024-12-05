@@ -1,26 +1,35 @@
-<div class="container-control" >
-<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')"  routerLink="/usuarios">
-    <h2 class="panel-de-control__title" >Usuarios</h2>
-</div>
-<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')"  routerLink="/categorias">
-    <h2 class="panel-de-control__title">Categorias</h2>
-</div>
-<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')"  routerLink="/nominados">
-    <h2 class="panel-de-control__title">Nominados</h2>
-</div>
-<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')"  routerLink="/nominaciones">
-    <h2 class="panel-de-control__title">Nomianciones</h2>
-</div>
-<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'jurado')"  routerLink="/registros-vostos">
-    <h2 class="panel-de-control__title">Registro</h2>
-</div>
-<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'jurado')"  routerLink="/votaciones">
-    <h2 class="panel-de-control__title">Votaciones</h2>
-</div>
-<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin')"  routerLink="/resultados">
-    <h2 class="panel-de-control__title">Resultados</h2>
-</div>
-<div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin')"  routerLink="/admin">
-    <h2 class="panel-de-control__title">Administrador</h2>
-</div>
-</div>
+<div class="container-control">
+    <div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')" routerLink="/usuarios">
+      <i class="fas fa-users icono-grande"></i>
+      <h2 class="panel-de-control__title">Usuarios</h2>
+    </div>
+    <div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')" routerLink="/categorias">
+      <i class="fas fa-tags icono-grande"></i>
+      <h2 class="panel-de-control__title">Categorías</h2>
+    </div>
+    <div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')" routerLink="/nominados">
+      <i class="fas fa-award icono-grande"></i>
+      <h2 class="panel-de-control__title">Nominados</h2>
+    </div>
+    <div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'asistente')" routerLink="/nominaciones">
+      <i class="fas fa-check-circle icono-grande"></i>
+      <h2 class="panel-de-control__title">Nominaciones</h2>
+    </div>
+    <div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'jurado')" routerLink="/registros-vostos">
+      <i class="fas fa-clipboard-list icono-grande"></i>
+      <h2 class="panel-de-control__title">Registro</h2>
+    </div>
+    <div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin' || usuario$?.permisos === 'jurado')" routerLink="/votaciones">
+      <i class="fas fa-vote-yea icono-grande"></i>
+      <h2 class="panel-de-control__title">Votaciones</h2>
+    </div>
+    <div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin')" routerLink="/resultados">
+      <i class="fas fa-trophy icono-grande"></i>
+      <h2 class="panel-de-control__title">Resultados</h2>
+    </div>
+    <div class="card-panel-de-control" *ngIf="estado && (usuario$?.permisos === 'admin')" routerLink="/admin">
+      <i class="fas fa-cogs icono-grande"></i>
+      <h2 class="panel-de-control__title">Administrador</h2>
+    </div>
+  </div>
+  
