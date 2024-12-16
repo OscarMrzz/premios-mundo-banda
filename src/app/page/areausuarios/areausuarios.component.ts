@@ -78,11 +78,12 @@ export class AreausuariosComponent implements OnInit {
       // Agregar nuevo usuario
       const datosCapturadosForm: UsuariosModel = this.datosFormulario;
       this.usuariosservice.save(datosCapturadosForm).subscribe(respuesta => {
-        console.log("Usuario agregado exitosamente", respuesta);
-        this.get();
+      
+        this.get(); 
       }, error => {
         console.error("Error al agregar el usuario", error);
-      });
+      })
+      this.get();;
     }
 
     // Reiniciar el formulario y dar foco al campo nombre
