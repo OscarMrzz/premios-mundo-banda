@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
   
       if (Datoslogin.nombre_usuario) {
         this.loginService.login(Datoslogin);
-        this.router.navigate(["/controles"])
+       
 
       }
       }
