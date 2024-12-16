@@ -54,7 +54,7 @@ export class LoginService {
          
           
         
-          this.router.navigate([""])
+          this.router.navigate(["/controles"])
         
        
         }
