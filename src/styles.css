@@ -373,8 +373,9 @@ body{
     font-size: 20px;
 }
 .galardon_premios{
-    column-count: 2; /* Dividir en 2 columnas */
-    column-gap: 20px; /* Espacio entre las columnas */
+    display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  gap: 10px; /* Espaciado entre elementos */
 }
 .galardon_premio{
     margin-left: 10px;
