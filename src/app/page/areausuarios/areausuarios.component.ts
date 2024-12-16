@@ -83,7 +83,7 @@ export class AreausuariosComponent implements OnInit {
       }, error => {
         console.error("Error al agregar el usuario", error);
       })
-      this.get();;
+
     }
 
     // Reiniciar el formulario y dar foco al campo nombre
